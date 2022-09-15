@@ -31,22 +31,22 @@ public class SiwEscursioniApplication {
 		EntityTransaction tx = em.getTransaction();
 
 		User admin = new User();
-		admin.setName("bibi");
-		admin.setSurname("bibi");
+		admin.setName("Admin");
+		admin.setSurname("Uno");
 
 		User user2 = new User();
-		user2.setName("gigi");
-		user2.setSurname("gigi");
+		user2.setName("Mario");
+		user2.setSurname("Rossi");
 
 		Credentials credentials = new Credentials();
-		credentials.setUsername("gigi@bibi.it");
+		credentials.setUsername("mariorossi@test.it");
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		credentials.setPassword(passwordEncoder.encode("test"));
 		credentials.setUser(user2);
 		credentials.setRole(Credentials.DEFAULT_ROLE);
 
 		Credentials adminCredentials = new Credentials();
-		adminCredentials.setUsername("bibi@bibi.it");
+		adminCredentials.setUsername("admin1@test.it");
 		adminCredentials.setPassword(passwordEncoder.encode("test"));
 		adminCredentials.setUser(admin);
 		adminCredentials.setRole(Credentials.ADMIN_ROLE);
